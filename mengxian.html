@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>homepage</title>
+	<style type="text/css">
+@media screen and (min-width:1200px){
+html{
+		font-size:74px;
+	}
+}
+ @media screen and (min-width: 960px) and (max-width: 1199px) { html{
+		font-size:74px;
+	} }
+  @media screen and (min-width: 768px) and (max-width: 959px) { html{
+		font-size:50px;
+	}} 
+  @media only screen and (min-width: 480px) and (max-width: 767px){html{
+		font-size:8px;
+	} } 
+  
+  @media only screen and (min-width: 319px) and (max-width: 479px){ html{
+		font-size:5px;
+	} }
+video#bgvid { 
+	
+  position: fixed; right: 0; bottom: 0; 
+  min-width: 100%; min-height: 100%; 
+  width: auto; 
+ height: auto; 
+ z-index: -100; 
+  /*bodybackground: url(mengxain.jpg) no-repeat; */
+  background-size: cover; 
+}
+.bgcolor{
+ position: fixed; right: 0; bottom: 0; 
+  min-width: 100%; min-height: 100%; 
+  width: auto; 
+ height: auto; 
+ z-index: -2; 
+  background-color:rgba(72, 93, 39, 0.82); 
+  background-size: cover; 
+	
+}
+/*.button{
+	font-size:2rem;
+	padding-top:20%;
+	padding-left: 30%;}*/
+#content{
+	font-size:1rem;
+	padding-top:10%;
+	padding-left:5%;
+	
+}
+ .button >a{
+	text-decoration: none;
+	border:5px solid rgba(255,255,255,0.62);
+	padding:3px;
+	padding-left:10px;
+	border-radius: 40px;
+}
+.button >a:hover{
+	background-color:rgba(255,255,255,0.62);
+}
+.text{
+margin: 0 auto ;
+text-align: center;
+color: white;
+}
+.button{
+	margin: 0 auto;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+
+<video autoplay loop poster="mengxain.jpg" id="bgvid"> 
+ <source src="lei.webm" type="video/webm">  
+<source src="lei.mp4" type="video/mp4"></video>
+<div class="bgcolor">
+</div>
+<div id="content">
+<div class="text">
+	<div>手捧绵薄之书，心怀诚挚之念。</div>
+	<div style="font-size:0.3rem; padding-top:36px;padding-bottom:36px;">
+	<div>袁敏容</div>
+	<div>E-mail:cin_minrong@163.com</div>
+	<div>Tel:18883325081</div>
+	<br>
+</div>
+<div class="button">
+	<a href="$" id="link" >Welcome to my website</a>
+</div>
+</div>
+</body>
+
+</html>
