@@ -1,0 +1,36 @@
+思考下哈，需要的内容是这样的，
+
+ 学生表      学生的编号  学生的姓名 学生的科目，学生的年级   
+ 比赛表     比赛的学生编号 比赛的地点 比赛的时间 学生的编号
+create  table student(
+ stu_id  int not null,
+ stu_name char (50) null, 
+ stu_class char(50) null,
+ stu_project char (50) null,
+ )
+ create table game (
+game_stu_id int not null,
+game_position  char (50) null,
+game_time char (50) null，
+game_stu_select_di int not null
+ )
+
+
+
+ 2.学生选择科目：
+学生需要填写的内容  
+1. 学号 姓名  班级 科目  
+
+呈现的内容
+1. 个人的信息  比赛的科目 地点 时间 比赛时的学生编号
+
+2.老师开设科目  确定地点  比赛的时间   一组最大的人数  
+ 呈现的内容
+ 科目  地点  时间 
+ 最终呈现的结果：
+ 科目  时间 地点 人名  班级 等内容 
+
+
+
+
+
