@@ -1,6 +1,6 @@
 思考下哈，需要的内容是这样的，
 
- 学生表      学生的编号  学生的姓名 学生的科目，学生的年级   
+ 学生表      学生的编号  学生的姓名 学生的科目，学生的班级   
  比赛表     比赛的学生编号 比赛的地点 比赛的时间 学生的编号
 create  table student(
  stu_id  int not null,
@@ -12,7 +12,7 @@ create  table student(
 game_stu_id int not null,
 game_position  char (50) null,
 game_time char (50) null，
-game_stu_select_di int not null
+game_stu_select_id int not null
  )
 
 
@@ -32,5 +32,48 @@ game_stu_select_di int not null
 
 
 
+3. 后台的设计
+
+   //数据库的连接
+try{
+  
+   $pdo=new PDO('mysql:host=192.168.253.1;dbname=leige','ymr','ymr');
+  $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+  $pdo->exec('set names "utf8"');
+  
+   }
+   catch (PDOException $e ){
+           $output="连接失败".$e->getMessage();
+          include 'output.html.php';
+          exit();
+   }
+
+
+// 一旦学生点击提交后，首先将数据写入到数据库中， 然后将后天的处理
+if(isset($_POST['value'])){
+  try{
+		 $stu_id=(int)$_GET['stu_id'];
+		  $stu_name=$_GET['stu_name'];
+		  $stu_class=$_GET['stu_class'];
+		  $stu_project =$_GET['stu_project'];
+$sql="INSERT INTO student(stu_id, stu_name,stu_project,stu_class) VALUES ($stu_id,$stu_name,$stu_project,$stu_class)"
+
+$s=$pdo->prepare($sql);
+
+ $s->execute();
+
+}
+catch (PDOException $e){
+  $error ='Error fetching authors form the database!'.$e->getMessage();
+  include 'output.html.php';
+  exit();
+}
+
+foreach($s as $row){
+  $texts[]=array('id'=>$row['id'],'textlist'=>$row['textlist']);
+}
+include 'makelist.html.php';
+exit();
+}
 
 
